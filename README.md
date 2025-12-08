@@ -1,72 +1,91 @@
-# iOS Script / Tool
+# iOS Wallet Manager Pro (GUI Version)
 
-> **⚠️ IMPORTANT NOTE:**
-> This modification is **non-persistent**. The changes will revert (become invalid) if you reboot your device.
+A professional Python-based tool with a **Graphical User Interface (GUI)** to customize Apple Wallet passes/cards on iOS devices using the **Books Exploit**.
 
-## Prerequisites
+> ⚠️ **IMPORTANT NOTE:**  
+> This modification is **non-persistent** — changes will revert after a reboot.  
+> **Use at your own risk.**
 
-Before running the script, please ensure all the following requirements are met:
+---
 
-1.  **Device Configuration:**
-    * Turn **OFF** "Find My iPhone".
-    * Enable **Developer Mode** (`Settings` -> `Privacy & Security` -> `Developer Mode`).
-2.  **Books App Setup:**
-    * Download the **Apple Books** app from the App Store.
-    * Open the app and successfully **download one book**.
-    * *Tip: If you cannot download a book, try logging into the App Store with an Apple ID from a different region.*
-3.  **System Requirements:**
-    * A computer running **macOS** or **Ubuntu**.
-    * **Python** environment installed.
-4.  **Connectivity:**
-    * Ensure both the iPhone and the Computer are connected to the **same Wi-Fi network**.
-    * Connect the iPhone to the computer via **USB cable**.
-    * *(Optional: Verify the connection status using tools like 3uTools or Finder).*
+## 🌟 Project Credits
 
-## Retrieving Wallet/Card IDs
+- **Developer:** YangJiii ([@duongduong0908](https://github.com/duongduong0908))
+- **Wallet ID Logs Exploit:** paragon ([@paragonarsi](https://twitter.com/paragonarsi))
+- **bl_sbx Exploit:** Duy Tran ([@khanhduytran0](https://twitter.com/khanhduytran0))
 
-If you need to obtain specific Wallet IDs, follow these steps:
+---
 
-1.  **Back up your iPhone** using **3uTools**.
-2.  Open the backup file using the **3uTools Backup Viewer**.
-3.  **Find Card IDs:**
-    Navigate to the directory:
-    `/HomeDomain/Library/Passes/Cards`
-    Here you will find the IDs for your added cards.
-4.  **Identify Card Issuer:**
-    To confirm which card belongs to which issuer (by viewing the issuer's icon/logo), navigate to:
-    `/HomeDomain/Library/Passes/Cards/NotificationAssets`
+## ✅ Prerequisites
 
-![3uTools Path Example](images/3u.png)
+### Device Configuration
+- Turn **OFF** Find My iPhone  
+- Enable **Developer Mode**  
+- Install **Apple Books** → download at least **one book**  
+  *(Required to generate UUID for the exploit)*
 
+### System Requirements
+- macOS (Recommended) or Linux  
+- Python **3.x**  
+- Device connected via USB (Trusted & Unlocked)
 
-## Customizing Card Images
+---
 
-To change the background image of a card, follow these steps:
+## 🛠 Installation
 
-1.  Navigate to the specific Cards folder.
-2.  Locate the file named: `cardBackgroundCombined@2x.png`
-3.  **Replace this file** with the image you want to use.
-    * *Note: Ensure your new image file is renamed exactly to `cardBackgroundCombined@2x.png`.*
-
-
-## Installation
-
-Open your terminal and install the required Python dependencies using one of the following commands:
+Install required Python libraries:
 
 ```bash
-sudo pip install click requests packaging pymobiledevice3
+pip3 install PyQt5 pymobiledevice3 click requests packaging
 ```
 
-Or, if you use pip3:
+> Depending on your system, you may need:
+> ```bash
+> sudo pip3 install ...
+> ```
+
+---
+
+## 🚀 Usage
+
+1. Connect your iPhone via USB and unlock it.
+2. Run the GUI tool (requires sudo for USB access):
 
 ```bash
-sudo pip3 install click requests packaging pymobiledevice3
+python3 path/to/main.py
 ```
-Usage Run the main script using administrator privileges (sudo). Replace the path below with the actual location of your script:
-```bash
-sudo python3 path/to/your/script/main.py
-```
-Troubleshooting
-General Errors: If you encounter issues, delete the uuid.txt file generated in the script's folder. Then, restart your iPhone and try the process again.
 
-UUID Fetching Failed: The most common issue involves fetching the device UUID. This is usually resolved by ensuring the Books app is set up correctly (see Prerequisites step 2). Using a foreign region Apple ID to download a book often fixes this.
+---
+
+## 🖥️ On the Interface
+
+### **Step 1 — Scan ID**
+- Remove the card from Apple Wallet if already added  
+- Click **SCAN CARD ID**  
+- Add the card to your Wallet  
+- The tool will automatically detect and display the Card ID  
+
+### **Step 2 — Save**
+Save the detected Card ID with a custom alias for later use.
+
+### **Step 3 — Select Image**
+Choose a custom **PNG** or **JPG** background image.
+
+### **Step 4 — Execute**
+Click **EXECUTE (INJECT)** to begin the modification process.
+
+---
+
+## 🔄 During Execution
+
+- Watch the **Progress Bar**  
+- If you see **“Books UUID Missing”**:
+  - Open the **Books** app → download any book  
+  - The tool will automatically detect this and **resume**  
+- Your device will automatically **respring** when finished  
+
+---
+
+## ☕ Support  
+If this project helped you, consider supporting via **Ko-fi** ❤️  
+👉 https://ko-fi.com/yangjiii/goal?g=1
