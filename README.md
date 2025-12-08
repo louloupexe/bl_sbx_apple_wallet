@@ -10,7 +10,7 @@ A professional Python-based tool with a **Graphical User Interface (GUI)** to cu
 
 ## 🌟 Project Credits
 
-- **Developer:** YangJiii ([@duongduong0908](https://github.com/duongduong0908))
+- **Developer:** ✨𝗬𝗮𝗻𝗴𝗝𝗶𝗶𝗶メ3105🍉 ([@duongduong0908](https://twitter.com/duongduong0908))
 - **Wallet ID Logs Exploit:** paragon ([@paragonarsi](https://twitter.com/paragonarsi))
 - **bl_sbx Exploit:** Duy Tran ([@khanhduytran0](https://twitter.com/khanhduytran0))
 
